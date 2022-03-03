@@ -1,0 +1,3 @@
+[submodule "VueShipit"]
+	path = VueShipit
+	url = ./VueShipit
