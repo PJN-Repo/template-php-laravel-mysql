@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SneakerController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +18,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::group(['middleware' => ['cors']], function () {
+
+    Route::prefix('v1')->group(function () {
+
+        Route::get('/sneakers/{page?}', [SneakerController::class, 'index']);
+        Route::post('/sneakers', [SneakerController::class, 'store']);
+        Route::get('/sneakers/{sneaker}', [SneakerController::class, 'show']);
+        Route::put('/sneakers/{sneaker}', [SneakerController::class, 'update']);
+        Route::post('/sneakers/{sneaker}', [SneakerController::class, 'update']);
+        Route::delete('/sneakers/{sneaker}', [SneakerController::class, 'delete']);
+
+    });
 });

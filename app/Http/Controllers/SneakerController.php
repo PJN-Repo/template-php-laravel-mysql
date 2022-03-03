@@ -11,12 +11,20 @@ use Illuminate\Support\Facades\Validator;
 
 class SneakerController extends Controller
 {
-    // public function index(): Collection
-    // {
-    //     $sneakers = Sneaker::all();
+    public function index($page = null): Collection
+    {
+        $limit = 12;
+        if ($page) {
+            $offset = $page * $limit;
+
+            $sneakers = Sneaker::all()->skip($offset)->take($limit);
+
+        } else {
+            $sneakers = Sneaker::all()->take($limit);
+        }
         
-    //     return $sneakers;
-    // }
+        return $sneakers;
+    }
 
     public function read(Sneaker $sneaker): JsonResponse
     {
