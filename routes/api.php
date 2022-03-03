@@ -24,7 +24,7 @@ Route::group(['middleware' => ['cors']], function () {
 
     Route::prefix('v1')->group(function () {
 
-        Route::get('/sneakers/{page?}', [SneakerController::class, 'index']);
+        Route::get('/sneakers/{page?}/{filter_min?}/{filter_max?}', [SneakerController::class, 'index']);
         Route::post('/sneakers', [SneakerController::class, 'store']);
         Route::get('/sneakers/{sneaker}', [SneakerController::class, 'show']);
         Route::put('/sneakers/{sneaker}', [SneakerController::class, 'update']);

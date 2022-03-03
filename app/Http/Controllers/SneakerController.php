@@ -11,14 +11,17 @@ use Illuminate\Support\Facades\Validator;
 
 class SneakerController extends Controller
 {
-    public function index($page = null): Collection
+    public function index($page = null, $filter_min = null, $filter_max = null): Collection
     {
         $limit = 12;
         if ($page) {
             $offset = $page * $limit;
 
-            $sneakers = Sneaker::all()->skip($offset)->take($limit);
-
+            if ($filter_min && $filter_max) {
+                $sneakers = Sneaker::where('retailPrice', '<=', $filter_max)->where('retailPrice', '>=', $filter_min)->skip($offset)->take($limit)->get();
+            } else {
+                $sneakers = Sneaker::all()->skip($offset)->take($limit);
+            }
         } else {
             $sneakers = Sneaker::all()->take($limit);
         }

@@ -2,7 +2,7 @@
   <div>
     <v-carousel hide-delimiters>
       <v-carousel-item
-        :src="require('../assets/img/home/slider4.jpg')"
+        :src="images[0]"
       >
         <v-row
           class="fill-height"
@@ -13,7 +13,7 @@
         </v-row>
       </v-carousel-item>
       <v-carousel-item
-        :src="require('../assets/img/home/slider2.jpg')"
+        :src="images[1]"
       >
         <v-row
           class="fill-height"
@@ -24,7 +24,7 @@
         </v-row>
       </v-carousel-item>
       <v-carousel-item
-        :src="require('../assets/img/home/slider3.jpg')"
+        :src="images[2]"
       >
         <v-row
           class="fill-height"
@@ -35,7 +35,7 @@
         </v-row>
       </v-carousel-item>
       <v-carousel-item
-        :src="require('../assets/img/home/slider1.jpg')"
+        :src="images[3]"
       >
         <v-row
           class="fill-height"
@@ -54,7 +54,7 @@
         <v-card>
 
           <v-img
-            :src="require('../assets/img/home/slider2.jpg')"
+            :src="images[4]"
             class="white--text align-center"
             gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
             height="400px"
@@ -85,7 +85,7 @@
       >
         <v-card>
           <v-img
-            :src="require('../assets/img/home/slider3.jpg')"
+            :src="images[5]"
             class="white--text align-center"
             gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
             height="400px"
@@ -104,7 +104,7 @@
       >
         <v-card outlined>
           <v-img
-            :src="require('../assets/img/home/deal2.jpg')"
+            :src="images[6]"
             class="white--text align-center"
             gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
             height="300px"
@@ -121,7 +121,7 @@
       >
         <v-card outlined>
           <v-img
-            :src="require('../assets/img/home/deal3.jpg')"
+            :src="images[7]"
             class="white--text align-center"
             gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
             height="300px"
@@ -138,7 +138,7 @@
       >
         <v-card outlined>
           <v-img
-            :src="require('../assets/img/home/deal4.jpg')"
+            :src="images[8]"
             class="white--text align-center"
             gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
             height="300px"
@@ -173,7 +173,7 @@
                   <v-img
                     class="white--text align-end"
                     height="200px"
-                    :src="require('../assets/img/home/deal1.jpg')"
+                    :src="images[9]"
                   >
                     <v-card-title>Bags & Purses </v-card-title>
                   </v-img>
@@ -207,7 +207,7 @@
                   <v-img
                     class="white--text align-end"
                     height="200px"
-                    :src="require('../assets/img/home/deal2.jpg')"
+                    :src="images[10]"
                   >
                     <v-card-title>T-Shirt </v-card-title>
                   </v-img>
@@ -240,7 +240,7 @@
                   <v-img
                     class="white--text align-end"
                     height="200px"
-                    :src="require('../assets/img/home/deal3.jpg')"
+                    :src="images[11]"
                   >
                     <v-card-title>Jeans </v-card-title>
                   </v-img>
@@ -273,7 +273,7 @@
                   <v-img
                     class="white--text align-end"
                     height="200px"
-                    :src="require('../assets/img/home/deal4.jpg')"
+                    :src="images[0]"
                   >
                     <v-card-title>Shoes </v-card-title>
                   </v-img>
@@ -359,6 +359,21 @@
                     'pink darken-2',
                     'red lighten-1',
                     'deep-purple accent-4',
+                ],
+                images: [
+                    'https://images.unsplash.com/flagged/photo-1556637640-2c80d3201be8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+                    'https://images.unsplash.com/photo-1603787081207-362bcef7c144?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+                    'https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+                    'https://images.unsplash.com/photo-1605348532760-6753d2c43329?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+                    'https://images.unsplash.com/photo-1618677831708-0e7fda3148b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+                    'https://images.unsplash.com/photo-1571601035754-5c927f2d7edc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+                    'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+                    'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+                    'https://images.unsplash.com/photo-1607522370275-f14206abe5d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHNuZWFrZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+                    'https://images.unsplash.com/photo-1595909236612-9fd30b476365?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNuZWFrZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+                    'https://images.unsplash.com/photo-1597045566677-8cf032ed6634?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHNuZWFrZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+                    'https://images.unsplash.com/photo-1611510338559-2f463335092c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHNuZWFrZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+                    'https://images.unsplash.com/photo-1605408499391-6368c628ef42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHNuZWFrZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
                 ],
                 slides: [
                     'First',

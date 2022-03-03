@@ -40,6 +40,11 @@
                 ></v-text-field>
               </v-col>
             </v-row>
+            <v-btn
+              elevation="2"
+              class="ml-3 mb-5"
+              @click="filter(page, range[0], range[1])"
+            >APPLY</v-btn>
           </v-card>
         </div>
         <div
@@ -62,7 +67,7 @@
                     height="200px"
                     :src="sneaker.media.imageUrl"
                   >
-                    <v-card-title>{{sneaker.brand}} </v-card-title>
+                    <v-card-title class="text--secondary">{{sneaker.brand}} </v-card-title>
                     <v-expand-transition>
                       <div
                         v-if="hover"
@@ -107,15 +112,7 @@
 <script>
     export default {
         data: () => ({
-            range: [0, 10000],
-            select:'Popularity',
-            options: [
-                'Default',
-                'Popularity',
-                'Relevance',
-                'Price: Low to High',
-                'Price: High to Low',
-            ],
+            range: [0, 300],
             page:1,
             breadcrums: [
                 {
@@ -135,28 +132,7 @@
                 },
             ],
             min:0,
-            max:10000,
-            items: [
-                {
-                    id: 2,
-                    name: 'Shoes',
-                    children: [
-                        { id: 2, name: 'Casuals' },
-                        { id: 3, name: 'Formals' },
-                        { id: 4, name: 'Sneakers' },
-                    ],
-                },
-                {
-                    id: 1,
-                    name: 'Clothing',
-                    children: [
-                        { id: 5, name: 'Shirts' },
-                        { id: 6, name: 'Tops' },
-                        { id: 7, name: 'Tunics' },
-                        { id: 8, name: 'Bodysuit' },
-                    ],
-                }
-            ],
+            max:300,
             sneakers:[
                 
             ]
@@ -167,15 +143,24 @@
               .get('http://127.0.0.1:8000/api/v1/sneakers/' + page)
               .then(response => (this.sneakers = response.data))
               .catch(error => console.log(error))
+
+            this.min = 0;
+            this.max = 300;
+            this.range[0] = 0;
+            this.range[1] = 300;
           },
+          filter (page, min, max) {
+            this.$axios
+            .get('http://127.0.0.1:8000/api/v1/sneakers/' + page + '/' + min + '/' + max)
+            .then(response => (this.sneakers = response.data))
+            .catch(error => console.log(error))
+          }
         },
         mounted () {
-
           this.$axios
             .get('http://127.0.0.1:8000/api/v1/sneakers/')
             .then(response => (this.sneakers = response.data))
             .catch(error => console.log(error))
-
         }
     }
 </script>
